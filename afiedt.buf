@@ -1,4 +1,4 @@
-SELECT ename "이름", sal "월급", deptno "부서번호"
+SELECT ename, empno, sal
 FROM emp
-WHERE not sal >= 2000 AND not deptno = 10
+WHERE empno NOT in(7499,7521,7654,7698)
 /
