@@ -1,0 +1,45 @@
+SCOTT> SELECT ename
+  2  FROM emp;
+
+ENAME                                                                                                                   
+----------                                                                                                              
+SMITH                                                                                                                   
+ALLEN                                                                                                                   
+WARD                                                                                                                    
+JONES                                                                                                                   
+MARTIN                                                                                                                  
+BLAKE                                                                                                                   
+CLARK                                                                                                                   
+SCOTT                                                                                                                   
+KING                                                                                                                    
+TURNER                                                                                                                  
+ADAMS                                                                                                                   
+JAMES                                                                                                                   
+FORD                                                                                                                    
+MILLER                                                                                                                  
+
+14 개의 행이 선택되었습니다.
+
+SCOTT> SELECT job
+  2  FROM emp;
+
+JOB                                                                                                                     
+---------                                                                                                               
+CLERK                                                                                                                   
+SALESMAN                                                                                                                
+SALESMAN                                                                                                                
+MANAGER                                                                                                                 
+SALESMAN                                                                                                                
+MANAGER                                                                                                                 
+MANAGER                                                                                                                 
+ANALYST                                                                                                                 
+PRESIDENT                                                                                                               
+SALESMAN                                                                                                                
+CLERK                                                                                                                   
+CLERK                                                                                                                   
+ANALYST                                                                                                                 
+CLERK                                                                                                                   
+
+14 개의 행이 선택되었습니다.
+
+SCOTT> spool off

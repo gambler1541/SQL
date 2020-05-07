@@ -1,0 +1,4 @@
+SELECT ename "이름", sal "월급", deptno "부서번호"
+FROM emp
+WHERE not sal >= 2000 AND not deptno = 10
+/
