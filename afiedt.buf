@@ -1,4 +1,4 @@
-SELECT ename, empno, sal
+SELECT *
 FROM emp
-WHERE empno NOT in(7499,7521,7654,7698)
+WHERE comm BETWEEN 500 AND 5000 AND ename LIKE 'W%'
 /
