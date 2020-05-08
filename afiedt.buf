@@ -1,4 +1,4 @@
-SELECT *
+SELECT ename, comm, sal, sal + 9000
 FROM emp
-WHERE hiredate >= '81-01-01' AND hiredate <= '83-12-31' AND sal BETWEEN 1000 AND 1999
+WHERE comm IS NULL AND sal <= 1500
 /
