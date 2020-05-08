@@ -1,4 +1,5 @@
-SELECT ename, comm, sal, sal + 9000
+SELECT empno, ename, sal
 FROM emp
-WHERE comm IS NULL AND sal <= 1500
+WHERE ename LIKE '_____' OR ename LIKE '____'
+ORDER BY ename
 /
