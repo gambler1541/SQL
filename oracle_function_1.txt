@@ -8,7 +8,7 @@ EXP			지수값을 반환
 FLOOR			소숫점 아래를 잘라냄
 LOG			LOG값 반환
 POWER			POWER(n,t) => n에 t승 값을 반환
-SIGN			n < 0 = > -1, n = 0 => 0, n > 0 => 1 을 반환
+SIGN			(n < 0) => -1, (n = 0) => 0, (n > 0) => 1 을 반환
 SIN			사인 값 반환
 TAN			탄젠트 값 반환
 ROUND			특정 자릿수에서 반올림
