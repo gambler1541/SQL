@@ -1,5 +1,3 @@
-SELECT empno, ename, sal
+SELECT *
 FROM emp
-WHERE ename LIKE '_____' OR ename LIKE '____'
-ORDER BY ename
 /
