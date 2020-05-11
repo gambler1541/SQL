@@ -1,0 +1,27 @@
+문자 처리 함수
+
+구분			의미
+
+LOWER			소문자로 변환
+UPPER			대문자로 변환
+
+INITCAP			첫 글자만 대문자로 변환 (나머진 소문자)
+CONCAT			문자의 값을 연결(||)
+
+SUBSTR			문자를 원하는 곳에서 잘라 추출(문자 단위)
+SUBSTRB			"" 바이트 단위
+
+LENGTH			문자열의 길이 반환
+LENGTHB			문자열의 길이 반환(바이트 단위)	
+
+INSTR			특정 문자의 위치 값을 반환
+INSTRB			바이트 단위
+
+LPAD,RPAD		입력받은 문자열과 기호를 정렬하여 특정 길이의 문자열로 반환
+
+TRIM			잘라냄
+CONVERT			CHAR SET 을 반환
+
+CHR			ASCIICode 값으로 반환
+ASCII			ASCIICode 값을 문자로 반환
+REPLACE			문자열에서 특정 문자열로 변경
