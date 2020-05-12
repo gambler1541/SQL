@@ -1,4 +1,4 @@
-SELECT ename, sal
+SELECT ename, hiredate, sal, comm , sal + (NVL(comm, 0) + 2000) "sal + (comm+2000)"
 FROM emp
-WHERE INSTR(ename,'R',3,1) = 3
+WHERE TO_CHAR(hiredate, 'MM') = '09'
 /

@@ -53,3 +53,24 @@ NVL 함수
  : NULL 값을 0 또는 다른 값으로 변환 하기 위해 사용하는 함수
 
 
+조건 함수
+
+DECODE
+ - C언어인 else if 구문과 같은 역할을 한다.
+조건을 주고 난뒤 그 조건과 일치하는 값을 출력한다.
+
+	SELECT DEPTNO, DECODE(
+				deptno, 10 , 'A',
+				     	20 , 'B',
+					'DEFAULT')
+	FROM emp
+	ORDER BY deptno;
+
+
+ex) 부서번호에 따른 부서명 출력하기
+						       -> DECODE함수를 선언
+select ename, deptno, DECODE(deptno, 10, 'ACCOUNTING', -> 부서번호 (deptno)가 10일때 ACCOUNTING
+				     20, 'RESEARCH',   -> 20일때 RESEARCH
+				     30, 'SALES',      -> 30일때 SALES
+				     40, 'OPERATIONS') dnmme -> 40일때 OPERATIONS를 부서명(dname)
+FROM emp;
