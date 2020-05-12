@@ -17,3 +17,21 @@ TO_DATE			문자형을 날짜형으로 변환
 	-> TO_CHAR		  -> TO_DATE
 NUMBER			Character		Date
 	TO_NUMBER <-		     TO_CHAR <-
+
+
+날짜 FORMAT 형식
+	
+YYYY    연도표시    	    4자리
+YY	연도표시            2자리
+MM	월을숫자로표현	    
+MON	월을 알파벳으로 표현
+DAY	요일 표현
+DY	요일을 약어로 표현
+
+시간 FORMAT 형식
+
+AM/PM	오전 오후표시
+HH/HH12 시간(1 ~ 12)
+HH24	시간(0 ~ 23)
+MI	분을 표현
+SI 	초를 표현
