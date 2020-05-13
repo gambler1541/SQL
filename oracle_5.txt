@@ -72,5 +72,24 @@ ex) 부서번호에 따른 부서명 출력하기
 select ename, deptno, DECODE(deptno, 10, 'ACCOUNTING', -> 부서번호 (deptno)가 10일때 ACCOUNTING
 				     20, 'RESEARCH',   -> 20일때 RESEARCH
 				     30, 'SALES',      -> 30일때 SALES
-				     40, 'OPERATIONS') dnmme -> 40일때 OPERATIONS를 부서명(dname)
+				     40, 'OPERATIONS') dname -> 40일때 OPERATIONS를 부서명(dname)
+FROM emp;
+
+
+. 조건에 따라 서로 다른 처리가 가능한 CASE 함수
+
+ : 여러가지 경우에서 하나를 선택하는 함수 이다.
+.DECODE 함수는 조건이 일치(=) 하는 경우에만 적용하지만 CASE 함수는 다양한 비교 연산자를 사용하여 조건 제시 및 범위 지정을
+할 수 있다는 점이 차이점이다.
+
+중첩 fi ~ else 문과 같다.
+
+. 부서 번호에 해당하는 부서명을 구하는 쿼리문
+
+SELECT ename, deptno, CASE WHEN deptno = 10 THEN 'ACCOUNTING'
+			   WHEN deptno = 20 THEN 'RESEARCH'
+			   WHEN deptno = 30 THEN 'SALES'
+			   WHEN deptno = 40 THEN 'OPERATIONS'
+			   ELSE 'DEFAULT'
+			   END as dname 
 FROM emp;

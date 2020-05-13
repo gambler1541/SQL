@@ -1,4 +1,4 @@
-SELECT ename, hiredate, sal, comm , sal + (NVL(comm, 0) + 2000) "sal + (comm+2000)"
-FROM emp
-WHERE TO_CHAR(hiredate, 'MM') = '09'
+SELECT TO_CHAR(hiredate, 'DAY'), COUNT(*) 
+FROM emp 
+GROUP BY TO_CHAR(hiredate, 'DAY') ORDER BY 1
 /
