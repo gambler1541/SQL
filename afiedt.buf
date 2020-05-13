@@ -1,6 +1,4 @@
-SELECT e.ename, d.dname, e.sal, g.grade
-FROM emp e, dept d, salgrade g
-WHERE e.deptno = d.deptno
-AND e.sal >= g.losal
-AND e.sal <= g.hisal
+SELECT e1.ename, e1.sal ,d.loc
+FROM emp e,emp e1, dept d
+WHERE e1.ename != 'JONES' AND e.ename = 'JONES' AND e.deptno =e1.deptno AND d.deptno = e1.deptno
 /
