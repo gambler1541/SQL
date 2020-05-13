@@ -1,4 +1,6 @@
-SELECT TO_CHAR(hiredate, 'DAY'), COUNT(*) 
-FROM emp 
-GROUP BY TO_CHAR(hiredate, 'DAY') ORDER BY 1
+SELECT e.ename, d.dname, e.sal, g.grade
+FROM emp e, dept d, salgrade g
+WHERE e.deptno = d.deptno
+AND e.sal >= g.losal
+AND e.sal <= g.hisal
 /
