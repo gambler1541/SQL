@@ -1,0 +1,57 @@
+. 다중행 서브 쿼리
+
+: 다중행 서브 쿼리는 반환되는 결과가 하나 이상의 행일때 사용하는 서브 쿼리
+
+
+	. 다중행 서브 쿼리는 반드시 Muiltiple Row Operator(다중행 연산자)와 함께 사용해야 합니다.
+
+
+
+종류		의미
+
+IN		메인 쿼리의 비교 조건이 서브쿼리의 결과 중에서 하나라도 일치하면 참
+
+ANY, SOME	메인 쿼리의 비교 조건이 서브 쿼리의 검색 결과와 하나 이상 일치하면 참
+
+ALL		메인 쿼리의 조건이 서브 쿼리의 결과와 모든 값이 일치하면 참
+
+EXISTS		메인 쿼리의 비교 조건이 서브 쿼리의 결과 중에서 하나라도 일치하면 참
+		검색 결과가 하나라도 존재하면 참
+
+
+
+ALL
+   : ALL 연산자는 메인 쿼리의 비교 조건이 서브 쿼리의 검색결과와 모두 일치하면 참
+	
+	. 30번 소속 사원들 중에서 급여를 가장 많이 받는 사원보다 더 많은 급여를 받는 사람의 이름과 급여를
+	  출력 하시요
+
+
+> ALL : 최대 값 보다 큰 사람
+
+< ALL : 최소값 보다 작은 사람
+
+> ANY : 최소 값 보다 큰 사람
+
+< ANY : 최대값 보다 작은 사람 모두
+
+
+>SELECT ename, sal, deptno
+FROM emp
+WHERE sal > (SELECT AVG(sal) FROM emp WHERE deptno = 10 OR deptno = 20);
+
+
+
+다중 컬럼 서브 쿼리
+
+SELECT * 
+FROM emp
+WHERE (deptno, sal) IN (SELECT deptno, MAX(sal) FROM emp GROUP BY deptno);
+
+
+exists : 중복이 없다는 가정하에 COST(검색 단가)를 줄이기 위해 조건을 충족하는 값을 찾았을때
+ 바로 검색을 중지하는 함수
+
+
+ROWNUM 함수를 ORDER BY 함수와 함께 사용하면 순번이 뒤죽박죽 됩니다. 그 이유는 먼저 순번을 매기고
+난후 ORDER BY 정렬을 하기 때문입니다.

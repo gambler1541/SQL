@@ -1,5 +1,4 @@
-SELECT d.deptno, d.dname, ROUND(AVG(NVL(e.sal,0)),0), MAX(e.sal), MIN(e.sal), COUNT(*)
-FROM emp e, dept d
-WHERE d.deptno = e.deptno
-GROUP BY d.deptno, d.dname
+SELECT ename, sal, deptno
+FROM emp
+WHERE sal > ANY (SELECT sal FROM emp WHERE job = 'MANAGER') AND deptno != 20
 /
