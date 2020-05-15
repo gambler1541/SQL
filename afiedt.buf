@@ -1,4 +1,5 @@
-SELECT e1.ename, e1.sal ,d.loc
-FROM emp e,emp e1, dept d
-WHERE e1.ename != 'JONES' AND e.ename = 'JONES' AND e.deptno =e1.deptno AND d.deptno = e1.deptno
+SELECT d.deptno, d.dname, ROUND(AVG(NVL(e.sal,0)),0), MAX(e.sal), MIN(e.sal), COUNT(*)
+FROM emp e, dept d
+WHERE d.deptno = e.deptno
+GROUP BY d.deptno, d.dname
 /
