@@ -1,4 +1,4 @@
-SELECT ename, sal, deptno
-FROM emp
-WHERE sal > ANY (SELECT sal FROM emp WHERE job = 'MANAGER') AND deptno != 20
+SELECT ename, hiredate, mgr
+FROM (SELECT * FROM emp WHERE hiredate < (SELECT hiredate FROM emp WHERE ename = 'JAMES'))
+WHERE mgr = (SELECT mgr FROM emp WHERE ename = 'JAMES')
 /
