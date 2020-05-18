@@ -11,3 +11,15 @@ RENAME: 데이터베이스의 컬럼명을 변경
 ALTER :  기존에 존재하는 데이터베이스 객체를 다시 정의
 
 TRUNCATE : 테이블을 최초 생성 상태로 만들며 ROLLBACK 불가능
+
+.CREATE TABLE
+
+	: 새로운 테이블을 생성 합니다.
+
+	
+	CREATE TABLE table_name(
+
+		컬럼명1	데이터 타입,
+		컬렴명2	데이터 타입
+		);
+
