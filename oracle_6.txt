@@ -2,7 +2,7 @@ ROWID : 데이터베이스에서 데이터마다의 주소를 의미하는 개념이 바로 ROWID다.
 ROWID는 각기의 데이터를 구분할 수 있는 유일한 ID이기도 하다.
 데이터마다 유일하기 때문에 오라클 내부에서는 데이터를 가르키기 위한 주소로 쓰인다.
 
-AAAR3sAAEAAAACXAAA
+AAAR3s / AAE / AAAACX / AAA
 
 6	3	6	3
 1	2	3	4

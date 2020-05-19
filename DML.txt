@@ -1,0 +1,71 @@
+.DML(Data Manipulation Language) : 테이블의 내용을 추가(insert),수정(update),삭제(delete) 하는 DML
+
+	: 테이블 내의 데이터를 조작하는 언어
+
+.INSERT (입력)
+ 	
+
+    1. INSERT INTO 테이블명 [컬럼명] VALUES[값];
+
+    2. INSERT INTO 테이블명 VALUES[값];
+	-> 값과 컬럼의 갯수가 동일해야 함
+
+문자형 숫자는 숫자로 인식
+
+NULL이 허용한 컬럼에서 NULL값을 추가할수 있음(NULL 혹은 '')
+
+다중 테이블에 다중행 입력하기
+
+INSERT ALL
+INTO emp_hir VALUES(empno, ename, hiredate)
+INTO emp_mgr VALUES(empno,ename, mgr)
+SELECT empno, ename, hiredate, mgr
+FROM emp
+WHERE deptno = 20;
+
+1. INSERT INTO TEST1(deptno, dname, loc) VALUES(50, 'DESIGN');
+
+-> 값의 갯수가컬럼의 수보다 모자람
+ORA-00947: 값의 수가 충분하지 않습니다
+
+2. INSERT INTO TEST1(deptno, dname, loc) VALUES(50, 'DESIGN','SEOUL',60);
+
+-> 값의 갯수가 컬럼의 수보다 많음
+ORA-00913: 값의 수가 너무 많습니다
+
+3. INSERT INTO TEST1(deptno, dname, locccc) VALUES(50, 'DESIGN', 'SEOUL');
+
+-> 컬럼명이 명확하지 않음
+ORA-00904: "LOCCCC": 부적합한 식별자
+
+4. INSERT INTO TEST1(deptno, dname, loc) VALUES(50, 'DESIGN', 'SEOUL');
+
+-> 
+
+5. INSERT INTO TEST1(deptno, dname, loc) VALUES(50, 'DESIGN', SEOUL);
+
+-> vachar2형의 value에 ''가 붙지 않음
+ORA-00984: 열을 사용할 수 없습니다
+
+6. INSERT INTO TEST1(deptno, dname, loc) VALUES(100, 'DESIGN', 'SEOUL');
+
+->  2자리의 숫자만 받는데 3자리의 숫자를 넣음
+ORA-01438: 이 열에 대해 지정된 전체 자릿수보다 큰 값이 허용됩니다.
+
+7. `
+
+-> 입력은되지만 컬럼의 값이 맞지않음
+
+
+.UPDATE : 테이블의 내용을 수정
+	  테이블에 저장된 데이터를 수정하기 위한 명령문
+
+
+	형식
+
+	UPDATE 테이블명
+	SET 컬럼명1, 컬럼명2,,,
+	
+	WHERE 조건
+	
+	update emp03 set sal = 1300 WHERE ename like '%T%';
