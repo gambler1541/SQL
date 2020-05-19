@@ -1,4 +1,2 @@
-SELECT ename, hiredate, mgr
-FROM (SELECT * FROM emp WHERE hiredate < (SELECT hiredate FROM emp WHERE ename = 'JAMES'))
-WHERE mgr = (SELECT mgr FROM emp WHERE ename = 'JAMES')
+alter table emptable01
 /
