@@ -1,4 +1,2 @@
-UPDATE emp01
-SET SAL = 2500, hiredate = sysdate - 2
-WHERE job = 'SALESMAN'
+SELECT * FROM emp
 /
