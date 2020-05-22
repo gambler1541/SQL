@@ -1,0 +1,50 @@
+SEQUENCE(시퀀스)
+
+ : 오라클에서 행을 구분하기위해 기본키를 두고 있습니다.
+기본키는 항상 유일한 값을 가져아 합니다.
+기본키가 유일한 값을 갖도록 사용자가 직접 생성하려면 부담이 큽니다.
+시퀀스는 테이블내의 유일한 숫자를 자동으로 생성하는 자동 번호 발생기 입니다.
+
+
+형식
+
+	CREATE SEQUENCE 시퀀스 이름
+	START WITH n	=> 시퀀스 번호의 시작값
+	INCREMENT BY n  => 시퀀스 번호의 증가값(생략하면 1증가)
+	MAXVALUE n 	=> 시퀀스가 가질수 있는 최대 값
+	MINVALUE n	=> 시퀀스가 가질수 있는 최소 값
+	CYCLE | NOCYCLE => 지정된 시퀀스값이 최대값에 도달 했을때 다시 처음부터 시작 함(안함) > 기본 NOCYCLE
+	CACHE | NOCACHE => 메모리상에 시퀀스값을 미리할당 지정 기본(20)
+			   NOCACHE는 원칙적으로 메모리상의 시퀀스를 관리 하지 않음
+
+
+CREATE sequence kor_seq
+START WITH 10
+increment by 10
+maxvalue 100
+cache 10
+cycle;
+
+SELECT sequence_name, MAX_VALUE, MIN_VALUE,
+	INCREMENT_BY, CYCLE_FLAG
+FROM USER_SEQUENCES;
+
+CREATE sequence eng_seq
+START WITH 200
+INCREMENT BY 50
+maxvalue 1500;
+
+SELECT kor_seq.nextval from dual;
+
+
+CREATE table test_ss
+(
+  id number primary key,
+  name varchar2(30),
+  addr varchar2(30),
+  tel  varchar2(30)
+);
+
+INSERT INTO test_ss values(test_seq.nextval, 'korea', '서울', '010-456-7894');
+
+

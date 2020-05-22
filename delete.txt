@@ -43,3 +43,47 @@ INSERT VALUES(m.empno, m.ename, m.job, m.mgr, m.hiredate, m.sal, m.comm, m.deptn
 
 4. Durability(영속성) : 트렌젝션이 정상적을 종료 되면 그 결과는 시스템 오류가 발생하더라도 시스템에 영구적으로
  			적용되어야 한다.
+
+
+. 트렌젝션 명령어
+
+. COMMIT : commit은 트렌젝션의 처음과 끝을 나타낸다.
+	   즉 commit ~ commit까지가 TRANSATION 이다
+
+. ROLLBACK : ROLLBACK은 트렌젝션을 취소하고 난 뒤 처음부터 다시 시작하거나 SAVEPOINT부터 취소하고
+	     다시 되돌리는 기능을 한다.
+
+. SAVEPOINT : 세이브 포인트는 현재 까지의 트렌젝션을 특정이름으로 지정할때 사용한다.
+
+
+. COMMIT
+
+    . TRANSACTION(INSERT, UPDATE, DELETE) 작업내용을 실제 데이터베이스에 저장합니다.
+
+    . 이전 데이터가 완전히 업데이트 됩니다.
+ 
+    . 모든 사용자가 변경된 데이터의 결과를 볼 수 있습니다.
+
+
+
+. ROLLBACK
+
+    . TRANSACTION(INSERT, UPDATE, DELETE)작업내용을 취소 합니다.
+    . 이전에 COMMIT 한곳까지만 복구합니다.
+
+
+. 자동 COMMIT 과 자동 ROLLBACK 명령이 되는 경우
+
+. sqlplus가 정상종료 되었다면 자동 COMMIT되지만 비정상 종료 되었다면 자동 ROLLBACK 됩니다.
+
+. DDL과 DCL 명령문이 수행된 경우 자동으로 COMMIT 됩니다.
+
+. 정전이 발생하거나 컴퓨터 다운시 자동으로 ROLLBACK 됩니다.
+
+SAVEPOINT
+
+	: 현재의 트렌젝션을 작게 분할 할수 있다.
+	저장된 SAVEPOINT는 ROLLBACK TO SAVEPOINT문을 사용하여 표시한 SAVEPOINT까지 롤백이 가능하다.
+
+
+
